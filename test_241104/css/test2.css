@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    /* body에는 기본 글꼴 설정 - P에 적용*/
+    font-size: 17px;
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1.4;
+}
+.wrapper{
+    /*홈페이지 너비를 지정하고 브라우저 가운데 정렬*/
+    width: 1260px;
+    margin: 0 auto;
+}
+/*브라우저가 주는 태그의 기본 여백 삭제*/
+h1, h2, p, body, div {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 135px 0 12px 0; /*방향 위 오 아래 왼*/
+}
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 70px 0 6px 0;
+}
