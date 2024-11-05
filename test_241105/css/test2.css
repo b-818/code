@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 body {
-    font-family: "Noto Sans", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     font-size: 17px;
     font-weight: 400;
     color: #3d3d3d;
@@ -14,8 +14,17 @@ body {
     width: 1260px;
     margin: 0 auto;
 }
-h1 {
+.spec {
+    /*경로에 ../는 폴더 밖에 나가라는 명령
+    주의사항 ./와 /도 존재하는 명령이기 때문에 의미가 다름. 오타주의*/
+    background: url(../image/spec_bg.png) no-repeat center center /cover;
+    height: 546px;
+    color: #ffffff;
+    text-align: center;
+}
+.spec h1 {
     font-size: 55px;
     font-weight: 700;
-    color: #ffffff;
+    padding: 150px 0 30px 0;
+}
 }
