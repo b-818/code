@@ -43,6 +43,11 @@ em {
     margin: 0;
     padding: 0;
     /*모든 여백 삭제*/
+    box-sizing: border-box;
+    /*하나의 요소에 width/height와 padding이
+    동시에 들어가면 너비/높이가 늘어남
+    이걸 막는 코드
+    --- 입력한 너비/높이 내부로 여백이 들어가도록 수정*/
 }
 .wrapper {
     width: 1260px;
@@ -154,13 +159,6 @@ a {
     margin: 15px 0 0 0;
     padding: 50px 0 0 25px;
     /*내용에 따라 박스가 늘어나려면 하단 여백 설정*/
-}
-* {
-    box-sizing: border-box;
-    /*하나의 요소에 width/height와 padding이
-    동시에 들어가면 너비/높이가 늘어남
-    이걸 막는 코드
-    --- 입력한 너비/높이 내부로 여백이 들어가도록 수정*/
 }
 .pass .list ul li strong {
     color: #034ea2;
