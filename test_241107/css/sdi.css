@@ -149,7 +149,7 @@ a {
     width: 404px;
     height: 270px;
     /*내용에 따라 박스가 늘어나지 않으려면 설정*/
-    border: 1px solid #666666;
+    border: 1px solid #cccccc;
     border-radius: 15px;
     margin: 15px 0 0 0;
     padding: 50px 0 0 25px;
