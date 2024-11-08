@@ -1,0 +1,150 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+body {
+    font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #3d3d3d;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    /*em은 글자 크기를 1em으로 보는 상대크기
+    대략 포토샵에서 -50을 줬다면
+    -0.05em 정도를 줌*/
+}
+h1, h2 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+strong {
+    font-weight: inherit;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrap {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+/*이제 시작*/
+.str {
+    margin: 120px 0 0 0;
+}
+.str .tit {
+    display: flex;
+    justify-content: space-between;/*양 끝 배치*/
+    align-items: flex-end;/*아래 기준 정렬*/
+}
+.str .tit .inner strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: #db602b;
+}
+.str .tit .inner h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 10px 0 20px 0;
+}
+.str .tit .more a {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #db602b;
+    padding: 15px 25px;
+    border-radius: 30px;
+    display: block;
+    /*a에 스타일을 주면 display:block; 필수
+    단, 내가 예상한 것ㅅ보다 사이즈가 너무 커지면
+    display:inline-block; */
+}
+.str .list {
+    margin: 30px 0 0 0;
+}
+.str .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.str .list ul li {
+    width: 297px;
+}
+.str .list ul li a {
+    display: block;
+}
+.str .list ul li a .photo {
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    /*영역 밖으로 나오는 이미지를 안보이게 함*/
+    font-size: 0;
+    line-height: 0;
+}
+.str .list ul li a .inner {
+    background-color: #f4f4f4;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    padding: 15px 20px 20px 20px;
+}
+.str .list ul li a .inner h2 {
+    color: #1d1d1d;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+}
+.str .list ul li a .inner span {
+    color: #db602b;
+    font-weight: 800;
+    margin: 60px 0 0 0;
+    /*span 태그가 인라인 태그라서 margin 적용이 안됨
+    block 요소로 변경*/
+    display: block;
+}
+.sup {
+    margin: 120px 0 0 0;
+}
+.sup .tit strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: #db602b;
+}
+.sup .tit h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 10px 0 20px 0;
+}
+.sup .cts {
+    margin: 30px 0 0 0;
+   display: flex;
+   justify-content: space-between;
+}
+.sup .cts .photo {
+    border-radius: 15px;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+.sup .cts .inner {
+    width: 575px;
+}
+.sup .cts .inner h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 50px 0 0 0;
+}
+.sup .cts .inner .point {
+    font-size: 24px;
+    font-weight: 500;
+    color: #db602b;
+    margin: 30px 0 15px 0;
+}
+body {
+    margin: 0 0 500px 0;
+}
