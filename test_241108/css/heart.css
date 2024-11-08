@@ -66,6 +66,10 @@ li {
     단, 내가 예상한 것ㅅ보다 사이즈가 너무 커지면
     display:inline-block; */
 }
+.str .tit .more a:hover {
+    background-color: #ffde21;
+    color: #db602b;
+}
 .str .list {
     margin: 30px 0 0 0;
 }
