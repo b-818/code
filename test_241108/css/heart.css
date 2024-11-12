@@ -82,6 +82,7 @@ li {
 }
 .str .list ul li a {
     display: block;
+    box-sizing: border-box;
 }
 .str .list ul li a .photo {
     border-radius: 15px 15px 0 0;

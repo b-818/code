@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.4;
+}
+h1, h2 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+strong {
+    font-weight: inherit;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/*이제 시작*/
+.glob .tit h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin: 60px 0 15px 0;
+}
+.glob .tit strong {
+    color: #00b900;
+}
+.glob .tit p {
+    margin: 15px 0 0 0;
+}
+.glob .more ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.glob .more ul li {
+    width: 136px;
+    margin: 30px 25px 45px 0;
+}
+.glob .more ul li a {
+    display: block;
+}
+.glob .more ul li .inner span {
+    color: #00b900;
+    border: 1px solid #00b900;
+    text-align: center;
+    padding: 8px 0;
+    display: block;
+    }
+.glob .more ul li .inner p {
+    border: 1px solid #555555;
+    text-align: center;
+    padding: 8px 0;
+    }
+.glob .photo {
+    font-size: 0;
+    line-height: 0;
+}
+.stor {
+    background: url(../images/stor_bg.jpg) no-repeat center center /cover;
+    height: 590px;
+    color: #ffffff;
+    text-align: center;;
+}
+.stor .tit h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 80px 0 0 0;
+    padding: 70px 0 30px 0;
+}
+.stor .more ul {
+    display: flex;
+    justify-content: center;
+}
+.stor .more ul li {
+    width: 164px;
+}
+.stor .more ul li a {
+    display: block;
+}
+.stor .more ul li .inner p {
+    border: 1px solid #ffffff;
+    text-align: center;
+    margin: 35px 0 45px 0;
+    padding: 8px 0;
+    }
+.stor .photo {
+    font-size: 0;
+    line-height: 0;
+}
