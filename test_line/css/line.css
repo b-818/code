@@ -35,13 +35,12 @@ li {
     font-size: 40px;
     font-weight: 700;
     color: #2d2d2d;
-    margin: 60px 0 15px 0;
+    margin: 60px 0 0 0;
 }
 .glob .tit strong {
     color: #00b900;
-}
-.glob .tit p {
-    margin: 15px 0 0 0;
+    margin: 15px 0 15px 0;
+    display: block;
 }
 .glob .more ul {
     display: flex;
