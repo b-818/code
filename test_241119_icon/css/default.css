@@ -1,0 +1,25 @@
+/*브라우저가 태크에 주는 기본 스타일을 초기화*/
+
+* {
+    /*와일드카드 - 모든 태그*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+strong {
+    font-weight: inherit;
+}
+ul, li, ol {
+    list-style: none;
+}
+a {
+    color: inherit; /*파란색 삭제*/
+    text-decoration: none; /*밑줄 삭제*/
+}
+em, address {
+    font-style: normal; /*글자의 이탤릭 스타일 삭제*/
+}
