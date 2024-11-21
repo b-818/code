@@ -1,0 +1,16 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    height: 100vh;
+}
+.visual h2 {
+    padding-top: 550px;
+}
+
+body {
+    margin-bottom: 500px;
+}
