@@ -12,6 +12,7 @@ body, html {
     /*id는 #으로 불러옴*/
     min-width: 1300px;
     /*콘텐츠 영역 1260px 좌우여백 20px씩*/
+    /*overflow: hidden;sticky 적용할 땐 빼야함*/
 }
 .wrapper {
     /*디자인 파일에 레이아웃 그리드처럼 홈페이지 영역 제한하고 브라우저에 가운데 정렬*/
