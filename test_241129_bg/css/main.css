@@ -1,0 +1,244 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+h2 {
+    font-size: 55px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 100px 0 0 0;
+}
+p {
+    margin: 10px 0 50px 0;
+}
+.fit .list1 ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.fit .list1 ul li {
+    width: 404px;
+}
+.fit .list1 ul li a {
+    display: block;
+}
+.fit .list1 ul li a .photo img {
+    width: 100%; /*photo 너비의 100%*/
+}
+/*--------------------------------------------------------*/
+.fit .list2 ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.fit .list2 ul li {
+    width: 404px;
+}
+.fit .list2 ul li a {
+    display: block;
+}
+.fit .list2 ul li a .photo {
+    /*li에서 너비를 제한
+    그리고 a, photo는 block 요소라
+    li의 너비를 그대로 가지고 있음*/
+    height: 404px;
+}
+.fit .list2 ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*--------------------------------------------------------*/
+.fit .list3 ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.fit .list3 ul li {
+    width: 404px;
+}
+.fit .list3 ul li a {
+    display: block;
+}
+.fit .list3 ul li a .photo {
+    /*li에서 너비를 제한
+    그리고 a, photo는 block 요소라
+    li의 너비를 그대로 가지고 있음*/
+    height: 404px;
+    background-color: #45e;
+}
+.fit .list3 ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+/*--------------------------------------------------------*/
+.bg .list ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.bg .list ul li {
+    width: 404px;
+}
+.bg .list ul li a {
+    display: block;
+    height: 404px;
+    border: 1px solid #45e;
+    color: #fff;
+    font-size: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg .list.case2 ul li a {
+    background-size: contain;
+}
+.bg .list ul li.list1 a  {
+    background-image: url(../images/bg1.png);
+}
+.bg .list ul li.list2 a  {
+    background-image: url(../images/bg2.png);
+}
+.bg .list.case3 ul li a {
+    background-size: 50%;
+}
+.bg .list.case4 ul li a {
+    background-size: auto 300px;
+}
+/*--------------------------------------------------------*/
+.over .list ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.over .list ul li {
+    width: 404px;
+}
+.over .list ul li a {
+    display: block;
+    height: 200px;
+    position: relative;
+}
+.over .list ul li a .photo {
+    position: absolute; /*a를 기준으로 정렬 + before의 기준이 됨*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+.over .list ul li a .photo::before {
+    content: "";
+    position: absolute; /*photo를 기준으로 정렬*/
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0; /*transition 부드럽게 주기 위해서는 반드시 opacity
+    display:none;로 숨긴 개체는 transition 적용 불가*/
+    transition: 0.5s;
+    z-index: 1;
+}
+.over .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.over .list ul li a h3 {
+    font-size: 50px;
+    color: rgba(225, 225, 225, 0.5);
+    text-align: center;
+    padding-top: 8px;
+    transition: 0.5s;
+}
+/*-----------------------------hover---------------------------*/
+.over .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.over .list ul li a:hover .photo::before {
+    opacity: 40%;
+}
+.over .list ul li a:hover h3 {
+    padding-top: 60px;
+}
+/*--------------------------------------------------------*/
+.bg_over .list ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.bg_over .list ul li {
+    width: 404px;
+}
+.bg_over .list ul li a {
+    display: block;
+    height: 200px;
+    position: relative; /*before/after 정렬의 기준*/
+    overflow: hidden;
+}
+.bg_over .list ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+}
+.bg_over .list ul li.bg1 a::before {
+    background-image: url(../images/bg3.jpg);
+}
+.bg_over .list ul li.bg2 a::before {
+    background-image: url(../images/bg4.jpg);
+}
+.bg_over .list ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #000;
+    opacity: 0;
+    transition: 0.5s;
+}
+.bg_over .list ul li a h3 {
+    position: relative;
+    font-size: 50px;
+    color: rgba(225, 225, 225, 0.5);
+    text-align: center;
+    transition: 0.5s;
+}
+/*-----------------------------hover---------------------------*/
+.bg_over .list ul li a:hover::before {
+    content: "";
+    transform: scale3d(1.1, 1.1, 1);
+} 
+.bg_over .list ul li a:hover::after {
+    content: "";
+    background-color: #000;
+    opacity: 50%    ;
+}
+.bg_over .list ul li a:hover h3 {
+    margin-top: 60px;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------*/
+body {
+    margin-bottom: 500px;
+}
