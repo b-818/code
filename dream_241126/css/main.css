@@ -236,6 +236,7 @@ header .tnb .global button::before {
 .news .list ul li a {
     position: relative;
     display: flex;
+    
     justify-content: space-between;
     background-color: #fff;
     padding: 31px 50px 31px 50px;
@@ -243,6 +244,15 @@ header .tnb .global button::before {
     font-size: 22px;
     color: #555;    
     transition: 0.2s;
+}
+.news .list ul li a h3 {
+    width: calc(100% - 180px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news .list ul li a span {
+    width: 150px;
 }
 .news .more {
     position: absolute;
@@ -281,6 +291,7 @@ header .tnb .global button::before {
 /*-------------------------zine-----------------------*/
 .zine {
     margin-top: 130px;
+    position: relative;
 }
 .zine .tit h2 {
     font-family: 'Gmarket Sans';    font-style: normal;    font-weight: 700;
@@ -288,6 +299,9 @@ header .tnb .global button::before {
     line-height: 1.1;
     color: #1d1d1d;
     margin: 13px 0 72px 0;
+}
+.zine .list {
+     overflow: hidden;
 }
 .zine .list ul {
     display: flex;
@@ -303,6 +317,11 @@ header .tnb .global button::before {
         너비를 유지하려면 계산해서 ul한테 줘야함
     */
     width: 2116px;
+    /* absolute는 공간을 차지하지 않고 순서를 역행
+       relative는 공간을 차지. 불가피하게 위치 정의를 해야할 때*/
+    position: relative; /* list를 기준(wrapper와 너비 동일)*/
+    left: 50%;
+    transform: translateX(-50%);
 }
 .zine .list ul li {
     width: 404px;
@@ -337,8 +356,8 @@ header .tnb .global button::before {
 }
 .zine .list ul li a h3 {
     font-size: 20px;
-    color: #1d1d1d;
     line-height: 1.2;
+    color: #1d1d1d;
     white-space: nowrap; /*텍스트가 길어도 1줄로 이어지게 만듬*/
     overflow: hidden;
     text-overflow: ellipsis; /*잘린 글자 뒤에 ... 추가 */
@@ -358,12 +377,122 @@ header .tnb .global button::before {
 .zine .list ul li a:hover .photo img {
     transform: scale3d(1.1, 1.1, 1);
 }
+.zine .more {
+    position: absolute;
+    right: calc(50% - 630px);
+    /* a 안에는 제목과 날짜가 존재하는데 날짜는 길이 변하지 않음
+    그래서 날짜 들어갈 너비와 제목과 날짜 사이의 여백을 더해서
+    100% 에서 빼기 = h3가 가질 수 있는 최대 너비*/
+    top: 0;
+    /*wrapper를 기준으로 정렬해서 layout의 오른쪽에 배치하면 좋지만 코딩구조상
+    그게 불가한 경우 가운데를 기준으로 해서 layout너비의 절반을 빼거나 더해서 배치*/
+}
+.zine .more a {
+    display: block;
+    padding-right: 24px;
+}
+.zine .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 1px;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.37492 13.959H10.6249V10.6257H13.9583V9.37565H10.6249V6.04232H9.37492V9.37565H6.04158V10.6257H9.37492V13.959ZM10.0014 17.9173C8.90638 17.9173 7.87714 17.7095 6.91367 17.294C5.9502 16.8784 5.11214 16.3145 4.3995 15.6021C3.68686 14.8897 3.12263 14.052 2.70679 13.089C2.2911 12.1259 2.08325 11.097 2.08325 10.0021C2.08325 8.90711 2.29103 7.87787 2.70659 6.9144C3.12214 5.95093 3.6861 5.11287 4.39846 4.40023C5.11082 3.6876 5.94853 3.12336 6.91159 2.70753C7.87464 2.29183 8.9036 2.08398 9.99846 2.08398C11.0935 2.08398 12.1227 2.29176 13.0862 2.70732C14.0496 3.12287 14.8877 3.68683 15.6003 4.39919C16.313 5.11155 16.8772 5.94926 17.293 6.91232C17.7087 7.87537 17.9166 8.90433 17.9166 9.99919C17.9166 11.0942 17.7088 12.1234 17.2933 13.0869C16.8777 14.0504 16.3137 14.8884 15.6014 15.6011C14.889 16.3137 14.0513 16.8779 13.0883 17.2938C12.1252 17.7095 11.0962 17.9173 10.0014 17.9173ZM9.99992 16.6673C11.861 16.6673 13.4374 16.0215 14.7291 14.7298C16.0208 13.4382 16.6666 11.8618 16.6666 10.0007C16.6666 8.13954 16.0208 6.56315 14.7291 5.27148C13.4374 3.97982 11.861 3.33398 9.99992 3.33398C8.13881 3.33398 6.56242 3.97982 5.27075 5.27148C3.97909 6.56315 3.33325 8.13954 3.33325 10.0007C3.33325 11.8618 3.97909 13.4382 5.27075 14.7298C6.56242 16.0215 8.13881 16.6673 9.99992 16.6673Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.1s;
+}
+/*-------------------------hover-----------------------*/
+.zine .more a:hover {
+    color: #3451A3;
+}
+.zine .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.37516 13.959H10.6252V10.6257H13.9585V9.37565H10.6252V6.04232H9.37516V9.37565H6.04183V10.6257H9.37516V13.959ZM10.0016 17.9173C8.90662 17.9173 7.87738 17.7095 6.91391 17.294C5.95044 16.8784 5.11238 16.3145 4.39975 15.6021C3.68711 14.8897 3.12287 14.052 2.70704 13.089C2.29134 12.1259 2.0835 11.097 2.0835 10.0021C2.0835 8.90711 2.29127 7.87787 2.70683 6.9144C3.12238 5.95093 3.68634 5.11287 4.3987 4.40023C5.11107 3.6876 5.94877 3.12336 6.91183 2.70753C7.87488 2.29183 8.90384 2.08398 9.9987 2.08398C11.0937 2.08398 12.1229 2.29176 13.0864 2.70732C14.0499 3.12287 14.8879 3.68683 15.6006 4.39919C16.3132 5.11155 16.8775 5.94926 17.2933 6.91232C17.709 7.87537 17.9168 8.90433 17.9168 9.99919C17.9168 11.0942 17.7091 12.1234 17.2935 13.0869C16.8779 14.0504 16.314 14.8884 15.6016 15.6011C14.8893 16.3137 14.0516 16.8779 13.0885 17.2938C12.1254 17.7095 11.0965 17.9173 10.0016 17.9173Z' fill='%233451A3'/%3E%3C/svg%3E%0A");
+}
+
+/*-------------------------banner-----------------------*/
+.banner {
+    margin-top: 187px;
+}
+.banner .tit h2 {
+    font-family: 'Gmarket Sans';    font-style: normal;    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.1;
+    color: #1d1d1d;
+    margin: 13px 0 72px 0;
+}
+.banner .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.banner .list ul li {
+    width: 404px;
+}
+.banner .list ul li a {
+    display: block;
+    line-height: 100px;
+    background-color: #132441;
+    font-size: 22px;
+    color: #fff;
+    padding: 0 172px 0 40px;
+    position: relative;
+    transition: 0.2s;
+}
+.banner .list ul li a::after {
+    content: "";
+    position: absolute;
+    right: 40px;
+    top: 38px;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.1442 12L11 7.85575L9.95575 8.925L13.0307 12L9.95575 15.075L11 16.1442L15.1442 12ZM21.5 11.9982C21.5 13.3122 21.2507 14.5473 20.752 15.7035C20.2533 16.8597 19.5766 17.8653 18.7218 18.7205C17.8669 19.5757 16.8617 20.2527 15.706 20.7517C14.5503 21.2506 13.3156 21.5 12.0017 21.5C10.6877 21.5 9.45267 21.2507 8.2965 20.752C7.14033 20.2533 6.13467 19.5766 5.2795 18.7217C4.42433 17.8669 3.74725 16.8617 3.24825 15.706C2.74942 14.5503 2.5 13.3156 2.5 12.0017C2.5 10.6877 2.74933 9.45267 3.248 8.2965C3.74667 7.14033 4.42342 6.13467 5.27825 5.2795C6.13308 4.42433 7.13833 3.74725 8.294 3.24825C9.44967 2.74942 10.6844 2.5 11.9982 2.5C13.3122 2.5 14.5473 2.74933 15.7035 3.248C16.8597 3.74667 17.8653 4.42342 18.7205 5.27825C19.5757 6.13308 20.2527 7.13833 20.7518 8.294C21.2506 9.44967 21.5 10.6844 21.5 11.9982ZM20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/*-------------------------hover-----------------------*/
+.banner .list ul li a:hover {
+    background-color: #DAF561;
+    color: #132441;
+}
+.banner .list ul li a::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.1442 12L11 7.85575L9.95575 8.925L13.0307 12L9.95575 15.075L11 16.1442L15.1442 12ZM21.5 11.9982C21.5 13.3122 21.2507 14.5473 20.752 15.7035C20.2533 16.8597 19.5766 17.8653 18.7218 18.7205C17.8669 19.5757 16.8617 20.2527 15.706 20.7517C14.5503 21.2506 13.3156 21.5 12.0017 21.5C10.6877 21.5 9.45267 21.2507 8.2965 20.752C7.14033 20.2533 6.13467 19.5766 5.2795 18.7217C4.42433 17.8669 3.74725 16.8617 3.24825 15.706C2.74942 14.5503 2.5 13.3156 2.5 12.0017C2.5 10.6877 2.74933 9.45267 3.248 8.2965C3.74667 7.14033 4.42342 6.13467 5.27825 5.2795C6.13308 4.42433 7.13833 3.74725 8.294 3.24825C9.44967 2.74942 10.6844 2.5 11.9982 2.5C13.3122 2.5 14.5473 2.74933 15.7035 3.248C16.8597 3.74667 17.8653 4.42342 18.7205 5.27825C19.5757 6.13308 20.2527 7.13833 20.7518 8.294C21.2506 9.44967 21.5 10.6844 21.5 11.9982Z' fill='%23132441'/%3E%3C/svg%3E%0A");
+}
 
 
-
-
-
-
-body {
-    margin-bottom: 500px;
+footer {
+    padding: 40px 0 88px 0px;
+    margin-top: 220px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 40px;
+    margin: 30px 0 50px 0;
+}
+footer .f_nav ul li {
+    position: relative;
+}
+footer .f_nav ul li.privacy {
+    color: #1d1d1d;
+    font-weight: 500;
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 3px;
+    width: 0px;
+    height: 15px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+footer .f_nav ul li:last-child:after {
+    display: none; /*마지막 구분선 삭제*/
+}
+footer .f_info {
+    display: flex;
+    gap: 20px;
+    line-height: 2.0;
 }
