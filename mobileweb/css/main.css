@@ -1,0 +1,192 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+
+.data {
+    margin: 158px 0 0 0;
+}
+.data h2 {
+    font-size: 50px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 0 0 14px 0;
+}
+
+.data .photo {
+    margin: 55px 0 0 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.data .photo.case1 {
+    font-size: 0;
+    line-height: 0;
+    /*img xormfh 삽입한 이미지 사이즈 그대로 사용(높이 설정 X)
+        코딩으로 이미지 하단에 여백 삭제*/
+}
+.data .photo.case2 {
+    height: 314px;
+    /*영억에 이미지가 들어갈 너비와 높이가 잡혀야함
+        block요소라서 너비는 주지 않아도 정렬*/
+}
+.data .photo.case2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:640px){
+    .data {
+        margin: 53px 0 0 0;
+    }
+    .data h2 {
+        font-size: 25px;
+        font-weight: 800;
+        color: #1d1d1d;
+        margin: 0 0 5px 0;
+    }
+    
+    .data .photo {
+        margin: 20px 0 0 0;
+        border-radius: 0px;
+    }
+    .data .photo.case2 {
+        height: 90px;
+    }
+    .data .photo.case1 img {
+        width: 100%;
+    }
+}
+
+.esg {
+    margin: 200px 0 0 0;
+}
+.esg h2 {
+    font-size: 50px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 0 0 14px 0;
+}
+
+.esg .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 55px 0 0 0;
+}
+.esg .list ul li {
+    width: 618px;
+}
+.esg .list ul li a h3 {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+}
+.esg .list ul li a span {
+    display: inline-block;
+    margin: 57px 0 0 0;
+    padding-right: 30px;
+    position: relative;
+}
+.esg .list ul li a span::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.01164 16.2403L4.9472 15.1758L11.1231 8.99996L4.9472 2.82408L6.01164 1.75964L13.252 8.99996L6.01164 16.2403Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.esg .list ul li a {
+    height: 250px;
+    display: block;
+    padding: 37px 54px 0 54px;
+    color: #fff;
+    border-radius: 20px;
+}
+.esg .list ul li.bg1 a {
+    background-color: #01B4D2;
+}
+.esg .list ul li.bg2 a {
+    background-color: #5A8CFF;
+}
+.esg .list ul li.bg3 a {
+    background-color: #2264DC;
+}
+.esg .list ul li.bg4 a {
+    background-color: #0A0045;
+}
+
+@media screen and (max-width:640px) {
+    .esg {
+        margin: 53px 0 0 0;
+    }
+    .esg h2 {
+        font-size: 25px;
+        font-weight: 800;
+        color: #1d1d1d;
+        margin: 0 0 5px 0;
+    }
+    .esg .list ul {
+        gap: 16px;
+        margin: 20px 0 0 0;
+    }
+    .esg .list ul li {
+        width: calc(50% - 8px);
+    }
+    .esg .list ul li a h3 {
+        font-size: 17px;
+        font-weight: 800;
+        margin: 0 0 12px 0;
+    }
+    .esg .list ul li a p {
+        font-size: 13px;
+    }
+    .esg .list ul li a span {
+        display: inline-block;
+        margin: 45px 0 0 0;
+        padding-right: 21px;
+        position: relative;
+    }
+    .esg .list ul li a span::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 1px;
+        width: 9px;
+        height: 9px;
+        background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.01164 16.2403L4.9472 15.1758L11.1231 8.99996L4.9472 2.82408L6.01164 1.75964L13.252 8.99996L6.01164 16.2403Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .esg .list ul li a {
+        height: 100%;
+        padding: 21px 14px 23px 14px;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width:460px){
+        .esg .list ul li {
+        width: auto;
+}
+
+.work {
+    margin-top: 200px;
+}
+.work h2 {
+    font-size: 50px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 0 0 14px 0;
+}
+.work p br {
+    display: none;
+}
+
+body {
+    margin-bottom: 500px;
+}
