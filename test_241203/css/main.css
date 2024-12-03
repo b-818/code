@@ -98,7 +98,7 @@
 }
 .news .news_wrap .notice a h4 {
     width: calc(100% - 120px);
-    font-size: 20;
+    font-size: 20px;
     font-weight: 500;
     color: #1d1d1d;
     white-space: nowrap;
@@ -179,7 +179,7 @@
     }
     .news .news_wrap .notice a h4 {
         width: calc(100% - 100px);
-        font-size: 14;
+        font-size: 14px;
     }
     .news .news_wrap .notice a span {
         font-size: 13px;
