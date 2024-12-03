@@ -1,0 +1,225 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.introduce .photo {
+    margin: 100px 0 0 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.introduce .photo.case1 {
+    font-size: 0;
+    line-height: 0;
+}
+.introduce .photo.case1 img {
+    width: 100%;
+}
+.introduce .photo.case2 {
+    /*너비는 변경되지만 높이가 고정 - 이미지는 잘려도 됨
+        1. 너비와 높이를 고정 - 너비는 block태그라서 이미 100%*/
+    height: 308px;
+}
+.introduce .photo.case2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:640px) {
+    .introduce .photo {
+        margin: 80px 0 0 0;
+        border-radius: 0;
+    }
+    .introduce .photo.case1 img {
+        width: 100%;
+    }
+    .introduce .photo.case2 {
+        /*너비는 변경되지만 높이가 고정 - 이미지는 잘려도 됨
+            1. 너비와 높이를 고정 - 너비는 block태그라서 이미 100%*/
+        height: 125px;
+    }
+}
+.introduce .group {
+    display: flex;
+    justify-content: space-between;
+    margin: 45px 30px 120px 50px;
+}
+.introduce .group h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.2;
+}
+.introduce .group h2 span {
+    display: block; /*줄바꿈을 위해 block태그 사용*/
+}
+.introduce .group p {
+    width: 700px;
+}
+@media screen and (max-width:640px) {
+    .introduce .group {
+        display: block;
+        margin: 30px 0 100px 0;
+    }
+    .introduce .group h2 {
+        font-size: 20px;
+        margin: 0 0 15px 0;
+    }
+    .introduce .group h2 span {
+        display: inline;
+    }
+    .introduce .group h2 br {
+        display: none;
+    }
+    .introduce .group p {
+        width: auto;
+    }
+}
+.news {
+    margin: 100px 0 0 0;
+}
+.news h2 {
+    font-size: 55px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.2;
+    margin: 0 0 5px 0;
+}
+.news .news_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.news .news_wrap .notice {
+    width: 622px;
+    background-color: #f4f7fd;
+    padding: 12px 25px 32px 25px;
+}
+.news .news_wrap .notice a h3 {
+    display: none;
+}
+.news .news_wrap .notice a h4 {
+    width: calc(100% - 120px);
+    font-size: 20;
+    font-weight: 500;
+    color: #1d1d1d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news .news_wrap .notice a:hover h4 {
+    font-weight: 700;
+}
+.news .news_wrap .notice ul li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.news .news_wrap .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 5px 0;
+}
+.news .news_wrap .gallery {
+    width: 562px;
+}
+.news .news_wrap .gallery h3 {
+    display: none;
+}
+.news .news_wrap .gallery ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px 24px;
+}
+.news .news_wrap .gallery ul li {
+    width: calc(50% - 12px);
+}
+.news .news_wrap .gallery ul li a {
+    display: block;
+}
+.news .news_wrap .gallery ul li a .photo {
+    height: 168px;
+    overflow: hidden;
+}
+.news .news_wrap .gallery ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.news .news_wrap .gallery ul li a:hover .photo img{
+    transform: scale3d(1.1, 1.1, 1);
+}
+.news .news_wrap .gallery ul li a strong {
+    display: block;
+    margin: 10px 0 0 0;
+    line-height: 1.2;
+    
+    /* 1줄 제한 
+    1. 너비가 있거나 block태그 사용
+    2. 제목을 무조건 한 줄로 나타낼 때 white-space : nowrap;
+    3. 글자가 넘치면 overflow: hidden;
+    4. 잘린 글자 text-overflow: ellipsis; */
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width:640px) {
+    .news {
+        margin: 50px 0 0 0;
+    }
+    .news h2 {
+        font-size: 30px;
+        margin: 0 0 12px 0;
+    }
+    .news .news_wrap {
+        display: block
+    }
+    .news .news_wrap .notice {
+        width: 100%;
+        padding: 8px 13px 25px 13px;
+    }
+    .news .news_wrap .notice a h4 {
+        width: calc(100% - 100px);
+        font-size: 14;
+    }
+    .news .news_wrap .notice a span {
+        font-size: 13px;
+    }
+    .news .news_wrap .notice ul li a {
+        padding: 17px 0 7px 0;
+    }
+    .news .news_wrap .gallery {
+        width: 100%;
+        margin: 30px 0 0 0;
+    }
+    .news .news_wrap .gallery ul {
+        gap: 12px 14px;
+    }
+    .news .news_wrap .gallery ul li {
+        width: calc(50% - 7px);
+    }
+    .news .news_wrap .gallery ul li a .photo {
+        height: 151px;
+    }
+    .news .news_wrap .gallery ul li a strong {
+        font-size: 13px;
+        margin: 6px 0 0 0;
+        
+        /* 1줄 제한 
+        1. 너비가 있거나 block태그 사용
+        2. 제목을 무조건 한 줄로 나타낼 때 white-space : nowrap;
+        3. 글자가 넘치면 overflow: hidden;
+        4. 잘린 글자 text-overflow: ellipsis; */
+    
+        white-space: normal;
+        overflow: visible;
+    }
+}/*@media*/
+
+
+
+
+
+
+body {
+    margin-bottom: 500px;
+}
