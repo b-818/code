@@ -1,0 +1,201 @@
+@import url(default.css); /* default.css를 이 문서에 복사해서 넣은 것처럼 불러오기 */
+@import url(font.css);
+@import url(common.css);
+
+header {
+    height: 100px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    margin: 28px 0 0 0;
+}
+header .gnb .gnb_open, header .gnb .gnb_close {
+    display: none;
+}
+header .gnb .gnb_wrap ul {
+    display: flex;
+    justify-content: space-between;
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    color: #555;
+    font-size: 22px;
+    letter-spacing: -0.05em;
+    line-height: 100px;
+    padding: 0 21px; /*메뉴 간격의 1/2너비를 양쪽에 줌*/
+}
+header .gnb .gnb_wrap ul li a span {
+    position: relative;
+}
+header .gnb .gnb_wrap ul li a span::after {
+    content: "";
+    position: absolute; /*span 태그 기준으로 정렬*/
+    left: 0;
+    bottom: -30px;
+    width: 100%;
+    height: 3px;
+    background-color: #255698;
+    display: none;
+}
+header .gnb .gnb_wrap ul li a:hover {
+    color: #1d1d1d;
+    font-weight: 500;
+}
+header .gnb .gnb_wrap ul li a:hover span::after {
+    display: block;
+}
+@media screen and (max-width:640px) {
+    header {
+        height: 50px;
+        position: relative;
+    }
+    header .logo {
+        margin: 13px 0 0 0;
+    }
+    header .logo a img {
+        width: 89px;
+        /*너비든 높이든 하나만 줘라. 자동 비율*/
+    }
+    header .gnb .gnb_open {
+        display: block;
+        position: absolute; /*header 기준*/
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 50px;
+        font-size: 0; /*텍스트 없앨 때 0*/
+        line-height: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19.068' height='13.973' viewBox='0 0 19.068 13.973'%3E%3Cpath id='menu_24dp_5F6368_FILL0_wght400_GRAD0_opsz24' d='M121.059-706.027a.98.98,0,0,1-.755-.335,1.187,1.187,0,0,1-.3-.83,1.187,1.187,0,0,1,.3-.83.98.98,0,0,1,.755-.335h16.949a.98.98,0,0,1,.755.335,1.187,1.187,0,0,1,.3.83,1.187,1.187,0,0,1-.3.83.98.98,0,0,1-.755.335Zm0-5.822a.979.979,0,0,1-.755-.335,1.186,1.186,0,0,1-.3-.83,1.187,1.187,0,0,1,.3-.83.981.981,0,0,1,.755-.334h16.949a.981.981,0,0,1,.755.334,1.187,1.187,0,0,1,.3.83,1.186,1.186,0,0,1-.3.83.979.979,0,0,1-.755.335Zm0-5.822a.979.979,0,0,1-.755-.335,1.187,1.187,0,0,1-.3-.83,1.187,1.187,0,0,1,.3-.83.98.98,0,0,1,.755-.335h16.949a.98.98,0,0,1,.755.335,1.187,1.187,0,0,1,.3.83,1.187,1.187,0,0,1-.3.83.979.979,0,0,1-.755.335Z' transform='translate(-120 720)' fill='%23555'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 19px;
+        /*background-size 하나만 쓰면 너비 > 비율대로 높이 들어감*/
+    }
+    header .gnb .gnb_wrap ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    header .gnb .gnb_wrap{
+        display: none;
+    }
+}
+/*------------------------------------------------------------------------------------*/
+
+.visual {
+    height: 800px;
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff
+}
+.visual strong {
+    display: block;
+    font-size: 17px;
+    padding: 291px 0 5px 0;
+}
+.visual h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+@media screen and (max-width:640px) {
+    .visual {
+        height: auto;
+        padding: 0 0 64px 0;
+    }
+    .visual strong {
+        font-size: 13px;
+        padding: 145px 0 5px 0;
+    }
+    .visual h2 {
+        font-size: 25px;
+    }
+}
+
+/*------------------------------------------------------------------------------------*/
+
+.int {
+    margin: 136px 0 0 0;
+}
+.int .text_left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.int .inner {
+    width: 511px;
+}
+.int strong {
+    color: #255698;
+}
+.int h2  {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 8px 0;
+}
+.int h2 em {
+    color: #255698;
+}
+.int p.sub_tit {
+    font-size: 20px;
+    margin: 0 0 14px 0 ;
+}
+.int .btn_wrap {
+    margin: 37px 0 0 0;
+    display: flex;
+    gap: 10px;
+}
+.int .btn_wrap a {
+    display: block;
+    color: #255698;
+    border-radius: 25px;
+    border: 1px solid #255698;
+    padding: 12px 30px;
+}
+.int .btn_wrap a.point {
+    color: #fff;
+    background-color: #255698;
+}
+.int .btn_wrap a:hover {
+    color: #fff;
+    background-color: #229EA0;
+    border: 1px solid #229EA0;
+}
+.int .photo {
+    height: 568px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.int .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+.int .text_right {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse; /*좌우 반전*/
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    margin-top: 500px;
+}
