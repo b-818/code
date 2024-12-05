@@ -4,11 +4,11 @@
 
 header {
     height: 100px;
+    background-color: #ffd61f;
 }
 header .wrapper {
     display: flex;
     justify-content: space-between;
-    background-color: #229EA0;
 }
 header .logo {
     margin: 28px 0 0 0;
